@@ -73,7 +73,6 @@ app.post('/generate-brutalgram', async (req, res) => {
   }
 });
 
-// ✅ Move the server start down here, where it belongs
 const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.send('Brutalgram server is alive. Now go away.');
