@@ -50,7 +50,7 @@ app.post('/generate-brutalgram', async (req, res) => {
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-4',
+        model: 'gpt-3.5-turbo', 
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.9,
       },
@@ -75,6 +75,10 @@ app.post('/generate-brutalgram', async (req, res) => {
 
 // ✅ Move the server start down here, where it belongs
 const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+    res.send('Brutalgram server is alive. Now go away.');
+  });
+  
 app.listen(PORT, () => {
   console.log(`Brutalgram server listening on port ${PORT}`);
 });
